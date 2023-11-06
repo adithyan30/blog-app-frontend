@@ -25,11 +25,14 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/user/register", {
-        username: inputs.name,
-        email: inputs.email,
-        password: inputs.password,
-      });
+      const { data } = await axios.post(
+        "https://blog-app-backend-l3fl.onrender.com/api/v1/user/register",
+        {
+          username: inputs.name,
+          email: inputs.email,
+          password: inputs.password,
+        }
+      );
       if (data.success) {
         toast.success("User Register Successfully");
         navigate("/login");
